@@ -13,7 +13,7 @@ export default function AnalyticsCards() {
   const { data } = useQuery({
     queryKey: ['analytics-donations'],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/api/payment/record-donation", {
+      const res = await fetch("https://new-work-production-07dd.up.railway.app/api/payment/record-donation", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
         },

@@ -45,7 +45,7 @@ export default function AdminLogsTable() {
     queryKey: ["adminLogs", filters],
     queryFn: async () => {
       const query = new URLSearchParams(filters).toString();
-      const res = await fetch(`http://localhost:5000/api/admin/logs?${query}`, {
+      const res = await fetch(`https://new-work-production-07dd.up.railway.app/api/admin/logs?${query}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
         },

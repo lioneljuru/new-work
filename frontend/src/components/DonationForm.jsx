@@ -64,7 +64,7 @@ export default function DonationForm() {
   const verifyPayment = useCallback(async (transaction_id) => {
     setLoading(true);
     try {
-        const res = await fetch("http://localhost:5000/api/payment/verify-payment", {
+        const res = await fetch("https://new-work-production-07dd.up.railway.app/api/payment/verify-payment", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

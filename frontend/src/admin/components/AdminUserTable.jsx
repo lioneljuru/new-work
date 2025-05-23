@@ -52,7 +52,7 @@ export default function AdminUsersTable() {
 
   const handleInvite = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/admin/invite", {
+      const res = await fetch("https://new-work-production-07dd.up.railway.app/api/admin/invite", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

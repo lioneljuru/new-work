@@ -22,7 +22,7 @@ export default function AdminLogin() {
     try {
       console.log("🔎 Login Payload:", form);
 
-      const res = await fetch("http://localhost:5000/api/admin/login", {
+      const res = await fetch("https://new-work-production-07dd.up.railway.app/api/admin/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

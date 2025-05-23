@@ -21,7 +21,7 @@ export default function AdminAcceptInvite() {
 
     setSubmitting(true);
     try {
-      const res = await fetch("http://localhost:5000/api/admin/accept", {
+      const res = await fetch("https://new-work-production-07dd.up.railway.app/api/admin/accept", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...form, token }),
