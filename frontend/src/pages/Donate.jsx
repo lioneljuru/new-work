@@ -16,10 +16,15 @@ import { Button } from "@/components/ui/button";
 
 export default function Donate() {
   const formRef = useRef(null);
+  const adminRef = useRef(null);
   const [activeTab, setActiveTab] = useState("onetime");
 
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const scrollToAdmin = () => {
+    adminRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
@@ -38,7 +43,7 @@ export default function Donate() {
 
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-50 px-3 py-60 max-w-7xl mx-auto">
         {/* Hero section */}
-        <section className="max-w-xl space-y-6">
+        <section className="max-w-xl space-y-6 space-x-3">
           <h1 className="text-6xl sm:text-7xl font-bold text-blue-900 leading-tight drop-shadow">
             Support UNICEF’s Mission: Caring for Every Child
           </h1>
@@ -77,6 +82,10 @@ export default function Donate() {
               </div>
             </DialogContent>
           </Dialog>
+
+          <Button onClick={scrollToAdmin} variant="ghost" className="mt-4 bg-blue-100 text-gray-800 hover:bg-blue-900 hover:text-white">
+            Admin Portal
+          </Button>
         </section>
         
         {/* Donation form */}
@@ -108,6 +117,18 @@ export default function Donate() {
             </TabsContent>
           </Tabs>
         </div>
+      </div>
+      <div
+        ref={adminRef}
+        className="relative z-10 flex justify-center py-60 space-y-10 w-full items-center flex-col bg-blue-950"
+      >
+        <h1 className="text-7xl font-bold mb-9 text-center text-blue-200">
+          Admin Portal
+        </h1>
+        <p className="text-center text-blue-100 text-lg mb-9 max-w-xl">Admins can sign in to access<br /> the backend portal below</p>
+        <Button className="text-gray-900 text-3xl py-4 px-8 bg-blue-300 hover:bg-gray-600 hover:text-gray-200 transition-colors w-95 h-18 duration-300">
+          <a href="/admin/login">Sign In</a>
+        </Button>
       </div>
     </main>
   );
