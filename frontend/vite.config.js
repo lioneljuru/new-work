@@ -15,13 +15,11 @@ export default defineConfig({
     'process.env': {}
   },
   build: {
-    target: 'es2020'
+    target: 'es2020',
+    outDir: 'dist',
+    emptyOutDir: true,
   },
   server: {
-    /*headers: {
-      'Accept-CH': 'Sec-CH-UA, Sec-CH-UA-Arch, Sec-CH-UA-Model',
-      'Permissions-Policy': 'ch-ua-arch=*, ch-ua-model=*'
-    },*/
     proxy: {
       '/api': {
         target: 'https://new-work-production-07dd.up.railway.app', // Your backend port
