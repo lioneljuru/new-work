@@ -1,38 +1,35 @@
-name: Deploy Frontend to Vercel
+# File: .github/workflows/vercel.yml
+name: Deploy to Vercel
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - 'frontend/**'
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   deploy:
-    name: Vercel Frontend Deployment
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+
     steps:
-      - name: 📥 Checkout Repository
+      - name: ⬇️ Checkout repository
         uses: actions/checkout@v3
 
-      - name: 🔧 Setup Node.js
+      - name: 🟢 Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: 📦 Install Dependencies
-        working-directory: ./frontend
+      - name: 📦 Install dependencies
         run: npm install
 
-      - name: ⚒️ Build Project
-        working-directory: ./frontend
+      - name: 🏗 Build project
         run: npm run build
 
       - name: 🚀 Deploy to Vercel
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          working-directory: ./frontend
-          prod: true
+        run: |
+          npm install -g vercel
+          vercel --prod --token=${9QsQfLAjBWYgYyLyzXvzq9aQ} --confirm --cwd frontend
