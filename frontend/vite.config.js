@@ -24,7 +24,7 @@ export default defineConfig({
     },*/
     proxy: {
       '/api': {
-        target: 'http://localhost:5000', // Your backend port
+        target: 'https://new-work-production-07dd.up.railway.app', // Your backend port
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       }
