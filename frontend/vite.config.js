@@ -19,7 +19,7 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
   },
-  base: './',
+  base: process.env.VITE_BASE_PATH || '/new-work/tree/main/frontend',
   server: {
     proxy: {
       '/api': {
