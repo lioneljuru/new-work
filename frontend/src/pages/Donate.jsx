@@ -126,7 +126,7 @@ export default function Donate() {
           Admin Portal
         </h1>
         <p className="text-center text-blue-100 text-lg mb-9 max-w-xl">Admins can sign in to access<br /> the backend portal below</p>
-        <Button className="text-gray-900 text-3xl py-4 px-8 bg-blue-300 hover:bg-gray-600 hover:text-gray-200 transition-colors w-95 h-18 duration-300">
+        <Button className="text-gray-900 text-3xl py-4 px-8 bg-blue-300 hover:bg-blue-900 hover:text-gray-200 transition-colors w-95 h-18 duration-300">
           <a href="/admin/login">Sign In</a>
         </Button>
       </div>
