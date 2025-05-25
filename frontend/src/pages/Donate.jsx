@@ -34,7 +34,7 @@ export default function Donate() {
 
       {/* Decorative SVG illustration (bottom-right) */}
       <img
-        src={illustrate3}
+        src={illustrate}
         alt="Children Illustration"
         className="absolute top-0 right-0 h-full w-full md:w-1/3 rounded-lg shadow-xl opacity-50 z-0 object-cover
         transition-all duration-300 ease-in-out hover:opacity-80 hover:scale-105"
