@@ -23,7 +23,7 @@ export default function AdminUsersTable() {
   const { data, error, isLoading } = useQuery({
     queryKey: ['adminUsers'],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/api/admin/all", {
+      const res = await fetch("https://new-work-production-07dd.up.railway.app/api/admin/all", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
         },
@@ -35,7 +35,7 @@ export default function AdminUsersTable() {
 
   const roleMutation = useMutation({
     mutationFn: ({ id, role }) =>
-      fetch(`http://localhost:5000/api/admin/users/${id}/role`, {
+      fetch(`https://new-work-production-07dd.up.railway.app/api/admin/users/${id}/role`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -98,7 +98,7 @@ export default function AdminUsersTable() {
               onClick={async () => {
                 try {
                   const res = await fetch(
-                    `http://localhost:5000/api/admin/users/${user._id}/status`,
+                    `https://new-work-production-07dd.up.railway.app/api/admin/users/${user._id}/status`,
                     {
                       method: "PATCH",
                       headers: {
@@ -125,7 +125,7 @@ export default function AdminUsersTable() {
               variant="secondary"
               onClick={async () => {
                 try {
-                  const res = await fetch(`http://localhost:5000/api/admin/invite/resend`, {
+                  const res = await fetch(`https://new-work-production-07dd.up.railway.app/api/admin/invite/resend`, {
                     method: "POST",
                     headers: {
                       "Content-Type": "application/json",
