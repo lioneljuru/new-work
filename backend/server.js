@@ -10,7 +10,7 @@ import donationRoutes from './routes/payment.js';
 const app = express();
 
 app.use(cors({
-  origin: ['https://new-work-sage.vercel.app'],
+  origin: ['https://new-work-sage.vercel.app'] || "http://localhost:5000",
   methods: ['POST', 'GET', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With',],
   credentials: true
