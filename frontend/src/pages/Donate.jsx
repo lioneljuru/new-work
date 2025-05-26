@@ -36,7 +36,7 @@ export default function Donate() {
       <img
         src={illustrate}
         alt="Children Illustration"
-        className="absolute top-0 right-0 h-full w-full md:w-1/3 rounded-lg shadow-xl opacity-50 z-0 object-cover
+        className="absolute top-1 right-0 h-255 w-full md:w-1/3 rounded-lg shadow-xl opacity-50 z-0 object-cover
         transition-all duration-300 ease-in-out hover:opacity-80 hover:scale-105"
         loading="lazy"
       />
@@ -120,7 +120,7 @@ export default function Donate() {
       </div>
       <div
         ref={adminRef}
-        className="relative z-10 flex justify-center py-60 space-y-10 w-full items-center flex-col bg-blue-950"
+        className="relative z-10 flex justify-center py-60 space-y-10 w-full items-center flex-col bg-gradient-to-b from-[#adcfff] via-[#0b1e51cc] to-[#0b1e51]"
       >
         <h1 className="text-7xl font-bold mb-9 text-center text-blue-200">
           Admin Portal
