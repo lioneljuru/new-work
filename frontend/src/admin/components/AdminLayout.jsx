@@ -3,6 +3,8 @@ import {
   BarChart,
   Settings,
   Users,
+  Menu,
+  X,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -29,11 +31,11 @@ export default function AdminLayout() {
       {/* Sidebar */}
       <aside
         className={cn(
-          "flex flex-col space-y-2 bg-white border-r transition-all duration-200 ease-in-out",
+          "z-30 fixed md:relative top-0 left-0 bg-white border-r shadow-sm transition-all duration-200 ease-in-out",
           collapsed ? "w-16" : "w-64"
         )}
       >
-        <div className="p-4 flex items-center justify-between">
+        <div className="flex items-center justify-between p-4 border-b">
           {!collapsed && <h2 className="text-lg font-bold">Admin</h2>}
           <Button
             variant="ghost"
@@ -41,11 +43,11 @@ export default function AdminLayout() {
             onClick={() => setCollapsed(prev => !prev)}
             className="ml-auto"
           >
-            {collapsed ? "→" : "←"}
+            {collapsed ? <Menu size={20} /> : <X size={20} />}
           </Button>
         </div>
 
-        <nav className="space-y-1 px-2">
+        <nav className="space-y-1 px-2 mt-4">
           {navItems.map(({ label, icon, path }) => {
             const isActive = location.pathname === path;
             return (
@@ -66,7 +68,7 @@ export default function AdminLayout() {
       </aside>
 
       {/* Main content */}
-      <main className="flex-1 p-6 bg-gray-50 overflow-y-auto">
+      <main className="flex-1 p-4 overflow-y-auto ml-16 md:ml-64 transition-all duration-200">
         <Outlet />
       </main>
     </div>
