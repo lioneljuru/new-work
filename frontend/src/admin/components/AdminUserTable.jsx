@@ -80,18 +80,29 @@ export default function AdminUsersTable() {
         const user = row.original;
         return (
           <div className="flex gap-2">
-            <Button
+            {/*<Button
               size="sm"
-              onClick={() =>
-                roleMutation.mutate({
-                  id: user._id,
-                  role: user.role === "admin" ? "superadmin" : "admin",
-                })
-              }
-              variant="outline"
+              variant="destructive"
+              onClick={async () =>{
+                if (!comfirm(`Delete ${user.email}?`)) return;
+                try {
+                  const res = await fetch(`/api/admin/${user._id}`, {
+                    method: "DELETE",
+                    headers: {
+                      "Content-Type": "application/json",
+                      Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+                    },
+                  });
+                  if (!res.ok) throw new Error("Failed to delete admin");
+                  toast.success("Admin deleted");
+                  queryClient.invalidateQueries(["adminUsers"]);
+                } catch (err) {
+                  toast.error("Error deleting admin");
+                }
+              }}
             >
-              Promote
-            </Button>
+              Delete
+            </Button>*/}
             <Button
               size="sm"
               variant={user.status === "active" ? "destructive" : "outline"}
@@ -122,6 +133,7 @@ export default function AdminUsersTable() {
             </Button>
             <Button
               size="sm"
+              className="border shadow hover:bg-gray-400"
               variant="secondary"
               onClick={async () => {
                 try {

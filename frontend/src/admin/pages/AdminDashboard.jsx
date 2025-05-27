@@ -35,16 +35,37 @@ export default function Admin() {
   );
 }
 */
-import AdminLayout from '../components/AdminLayout';
+import { motion } from 'framer-motion';
 import AnalyticsCards from '../components/AnalyticsCards';
 import DonationTable from '../components/DonationTable';
 
 export default function AdminDashboard() {
   return (
-    <div>
-      <h1 className='text-5xl p-30 font-extrabold text-gray-800'>Dashboard Overview</h1>
-      <AnalyticsCards />
-      <DonationTable />
+    <div className="px-4 py-6 md:px-10 md:py-8 space-y-6">
+      <motion.h1
+      initial={{ opacity: 0, y: -30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="text-4xl md:text-5xl font-extrabold text-gray-800 text-center"
+      >
+        Dashboard Overview
+      </motion.h1>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.4, delay: 0.2 }}
+      >
+        <AnalyticsCards />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 10  }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 0.3 }}
+      >
+        <DonationTable />
+      </motion.div>
     </div>
   );
 }

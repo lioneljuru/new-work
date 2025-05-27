@@ -68,7 +68,7 @@ export default function AdminLayout() {
       </aside>
 
       {/* Main content */}
-      <main className="flex-1 p-4 overflow-y-auto ml-16 md:ml-64 transition-all duration-200">
+      <main className="flex-1 p-6 overflow-y-auto ml-16 md:ml-64 transition-all duration-200">
         <Outlet />
       </main>
     </div>

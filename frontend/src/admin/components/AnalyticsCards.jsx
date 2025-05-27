@@ -43,7 +43,7 @@ export default function AnalyticsCards() {
 
   return (
     <div className="flex justify-center">
-      <div className="grid grid-cols-1 w-full sm:grid-cols-2 lg:grid-cols-4 gap-20 mb-7">
+      <div className="grid grid-cols-1 w-full sm:grid-cols-2 lg:grid-cols-3 gap-20 mb-7">
         <Card>
           <CardHeader>
             <CardTitle>Total Donations</CardTitle>
