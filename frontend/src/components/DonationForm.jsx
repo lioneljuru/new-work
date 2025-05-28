@@ -43,7 +43,7 @@ export default function DonationForm() {
   };
   const recordDonationAttempt = useCallback(async (status, transaction_id = null) => {
     try {
-        await fetch("http://localhost:5000/api/payment/record-donation", {
+        await fetch("https://new-work-production-07dd.up.railway.app/api/payment/record-donation", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
