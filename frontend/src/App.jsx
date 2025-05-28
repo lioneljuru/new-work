@@ -10,6 +10,7 @@ import AdminSettings from "./admin/pages/AdminSettings";
 import AdminAcceptInvite from "./admin/pages/AdminAccept";
 import AdminLayout from "./admin/components/AdminLayout";
 import AdminManage from "./admin/pages/AdminManage";
+import ThankYou from "./pages/Thankyou";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Donate />} />
         <Route path="/admin/accept-invite" element={<AdminAcceptInvite />} />
         <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/thank-you" element={<ThankYou />} />
 
         {/* Admin routes */}
         <Route path="/admin" element={<SecureFetch><AdminLayout /></SecureFetch>}>
